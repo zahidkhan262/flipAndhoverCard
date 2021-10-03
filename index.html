@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8b6c44059c.js"></script>
+    <title>Flip || Card</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 60px;
+        }
+
+        .card-body {
+            width: 300px;
+            height: 300px;
+            background: rgb(255, 255, 254);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: overflow 0.6s;
+        }
+
+        .front-card {
+            width: 300px;
+            height: 300px;
+            background: rgb(255, 255, 254);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .card-content {
+            padding: 10px;
+        }
+
+        .card-body:hover {
+            height: 450px;
+            display: block;
+            overflow: visible;
+        }
+
+        .fa {
+            font-size: 1.4em;
+            padding-right: 10px;
+            color: rgb(23, 143, 143);
+        }
+
+        .front-card {
+            width: 300px;
+            position: relative;
+        }
+
+        .front,
+        back {
+            position: absolute;
+            width: 300px;
+            height: 150px;
+            background: #fff;
+            backface-visibility: hidden;
+            cursor: pointer;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s;
+            z-index: 11;
+        }
+
+        .front-card .back {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            transform: perspective(1000px) rotate(-180deg);
+        }
+
+        .front-card:hover .front {
+            transform: translate(1000px) rotate(180deg);
+
+        }
+
+        .front-card:hover .back {
+            transform: perspective(1000px) rotate(0);
+        }
+
+        h3,
+        h5 {
+            color: rgb(67, 134, 134);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-body front-card">
+
+            <img src="Zahidkhan.jpg" alt="image" height="300px">
+            <div class="card-content">
+                <h3>Zahid Khan</h3>
+                <h5>Frontend Developer</h5>
+                <div class="skillSets">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="front-card">
+            <div class="front">
+                <img src="Zahidkhan.jpg" alt="image" height="300px">
+            </div>
+            <div class="back">
+                <h3>Zahid Khan</h3>
+                <h5>Frontend Developer</h5>
+                <div class="skillSets">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
